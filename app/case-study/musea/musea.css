@@ -1,0 +1,481 @@
+/* Musea Case Study - Dark Museum Theme */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --musea-bg: #0a0a0a;
+  --musea-surface: #141414;
+  --musea-surface-2: #1a1a1a;
+  --musea-gold: #c9a84c;
+  --musea-gold-dim: #8a7033;
+  --musea-text: #e8e4de;
+  --musea-text-dim: #8a857d;
+  --musea-text-muted: #5a5650;
+  --musea-accent: #d4a853;
+  --musea-border: #2a2724;
+  --musea-serif: 'Cormorant Garamond', Georgia, serif;
+  --musea-sans: 'Inter', -apple-system, sans-serif;
+  --musea-display: 'Space Grotesk', sans-serif;
+}
+
+.musea-page {
+  background: var(--musea-bg);
+  color: var(--musea-text);
+  font-family: var(--musea-sans);
+  overflow-x: hidden;
+  cursor: auto !important;
+}
+.musea-page *, .musea-page a, .musea-page button {
+  cursor: auto !important;
+}
+
+/* Smooth scroll */
+.musea-page { scroll-behavior: smooth; }
+
+/* Typography */
+.musea-heading {
+  font-family: var(--musea-serif);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--musea-text);
+}
+.musea-subheading {
+  font-family: var(--musea-display);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.75rem;
+  color: var(--musea-gold);
+}
+.musea-body {
+  font-family: var(--musea-sans);
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--musea-text-dim);
+  font-size: 1rem;
+}
+
+/* Section Styles */
+.musea-section {
+  padding: 100px 0;
+  position: relative;
+}
+.musea-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.musea-divider {
+  width: 60px;
+  height: 1px;
+  background: var(--musea-gold);
+  margin: 24px 0;
+}
+.musea-section-number {
+  font-family: var(--musea-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: var(--musea-text-muted);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+/* Hero */
+.musea-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.musea-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.3;
+  filter: blur(2px);
+}
+.musea-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10,10,10,0.6) 0%, rgba(10,10,10,0.95) 100%);
+}
+.musea-hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  max-width: 800px;
+  padding: 40px 24px;
+}
+.musea-hero-title {
+  font-family: var(--musea-serif);
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+  color: var(--musea-text);
+  margin-bottom: 24px;
+}
+.musea-hero-tagline {
+  font-family: var(--musea-sans);
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: var(--musea-text-dim);
+  max-width: 500px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+}
+.musea-hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+  font-size: 0.8rem;
+  color: var(--musea-text-muted);
+}
+.musea-hero-meta dt {
+  font-family: var(--musea-display);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--musea-gold-dim);
+  font-size: 0.65rem;
+  margin-bottom: 4px;
+}
+.musea-hero-meta dd {
+  color: var(--musea-text-dim);
+  font-weight: 400;
+}
+
+/* Cards */
+.musea-card {
+  background: var(--musea-surface);
+  border: 1px solid var(--musea-border);
+  padding: 32px;
+  transition: all 0.4s ease;
+}
+.musea-card:hover {
+  border-color: var(--musea-gold-dim);
+  transform: translateY(-2px);
+}
+.musea-card-gold {
+  border-left: 2px solid var(--musea-gold);
+}
+
+/* Problem cards */
+.musea-problem-card {
+  background: var(--musea-surface);
+  border: 1px solid var(--musea-border);
+  padding: 28px;
+  position: relative;
+  overflow: hidden;
+}
+.musea-problem-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: linear-gradient(90deg, var(--musea-gold), transparent);
+}
+.musea-problem-icon {
+  width: 40px; height: 40px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--musea-surface-2);
+  border: 1px solid var(--musea-border);
+  border-radius: 50%;
+  margin-bottom: 16px;
+  font-size: 1.1rem;
+}
+
+/* Persona cards */
+.musea-persona {
+  background: var(--musea-surface);
+  border: 1px solid var(--musea-border);
+  padding: 32px;
+  text-align: center;
+}
+.musea-persona-avatar {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--musea-gold-dim), var(--musea-surface-2));
+  margin: 0 auto 16px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2rem;
+  border: 2px solid var(--musea-border);
+}
+.musea-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: 1px solid var(--musea-border);
+  color: var(--musea-text-dim);
+  margin: 4px;
+}
+
+/* Comparison table */
+.musea-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.musea-table th {
+  font-family: var(--musea-display);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  color: var(--musea-gold);
+  padding: 16px;
+  border-bottom: 1px solid var(--musea-border);
+  text-align: left;
+}
+.musea-table td {
+  padding: 16px;
+  border-bottom: 1px solid var(--musea-border);
+  color: var(--musea-text-dim);
+  vertical-align: top;
+}
+.musea-table tr:hover td {
+  background: var(--musea-surface);
+}
+
+/* Polaroid image style */
+.musea-polaroid {
+  background: #f5f2ed;
+  padding: 12px 12px 40px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  transition: transform 0.5s ease;
+}
+.musea-polaroid:hover {
+  transform: rotate(0deg) scale(1.02) !important;
+}
+.musea-polaroid img {
+  width: 100%;
+  display: block;
+}
+.musea-polaroid-caption {
+  font-family: var(--musea-serif);
+  font-style: italic;
+  color: #3a3530;
+  text-align: center;
+  padding-top: 10px;
+  font-size: 0.85rem;
+}
+
+/* Floating museum elements */
+@keyframes museaFloat {
+  0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); }
+  50% { transform: translateY(-15px) rotate(var(--r, 0deg)); }
+}
+.musea-float {
+  animation: museaFloat 6s ease-in-out infinite;
+}
+
+/* Journey flow */
+.musea-journey-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  position: relative;
+}
+.musea-journey-dot {
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--musea-gold);
+  flex-shrink: 0;
+  margin-top: 6px;
+  box-shadow: 0 0 12px rgba(201,168,76,0.3);
+}
+.musea-journey-line {
+  position: absolute;
+  left: 5px; top: 18px;
+  width: 2px;
+  height: calc(100% + 16px);
+  background: var(--musea-border);
+}
+
+/* Design system swatches */
+.musea-swatch {
+  width: 100%; height: 80px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+/* Metrics */
+.musea-metric {
+  text-align: center;
+  padding: 32px;
+  background: var(--musea-surface);
+  border: 1px solid var(--musea-border);
+}
+.musea-metric-value {
+  font-family: var(--musea-serif);
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--musea-gold);
+  margin-bottom: 8px;
+}
+.musea-metric-label {
+  font-size: 0.8rem;
+  color: var(--musea-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Sticky nav */
+.musea-side-nav {
+  position: fixed;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.musea-side-nav a {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--musea-text-muted);
+  transition: all 0.3s ease;
+  display: block;
+}
+.musea-side-nav a:hover, .musea-side-nav a.active {
+  background: var(--musea-gold);
+  transform: scale(1.5);
+}
+
+/* Back button */
+.musea-back {
+  position: fixed;
+  top: 24px; left: 24px;
+  z-index: 100;
+  display: flex; align-items: center; gap: 8px;
+  color: var(--musea-text-dim);
+  font-size: 0.85rem;
+  text-decoration: none;
+  font-family: var(--musea-sans);
+  transition: color 0.3s;
+  background: rgba(10,10,10,0.8);
+  backdrop-filter: blur(10px);
+  padding: 10px 16px;
+  border: 1px solid var(--musea-border);
+}
+.musea-back:hover { color: var(--musea-gold); }
+
+/* Grid layouts */
+.musea-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.musea-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.musea-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+/* Accessibility icons */
+.musea-a11y-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px;
+  background: var(--musea-surface);
+  border: 1px solid var(--musea-border);
+}
+.musea-a11y-icon {
+  width: 44px; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--musea-surface-2);
+  border: 1px solid var(--musea-gold-dim);
+  border-radius: 8px;
+  flex-shrink: 0;
+  font-size: 1.2rem;
+}
+
+/* IA Node */
+.musea-ia-node {
+  padding: 12px 20px;
+  background: var(--musea-surface);
+  border: 1px solid var(--musea-border);
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--musea-text);
+  position: relative;
+}
+.musea-ia-node.primary {
+  border-color: var(--musea-gold);
+  background: rgba(201,168,76,0.08);
+}
+
+/* Decision card */
+.musea-decision {
+  background: var(--musea-surface);
+  border: 1px solid var(--musea-border);
+  padding: 28px;
+}
+.musea-decision-header {
+  font-family: var(--musea-serif);
+  font-size: 1.2rem;
+  color: var(--musea-text);
+  margin-bottom: 12px;
+}
+
+/* Quote */
+.musea-quote {
+  border-left: 2px solid var(--musea-gold);
+  padding: 16px 24px;
+  font-family: var(--musea-serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--musea-text-dim);
+  background: var(--musea-surface);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .musea-grid-2, .musea-grid-3, .musea-grid-4 {
+    grid-template-columns: 1fr;
+  }
+  .musea-section { padding: 60px 0; }
+  .musea-hero-title { font-size: 3rem; }
+  .musea-side-nav { display: none; }
+  .musea-hero-meta { flex-direction: column; gap: 16px; }
+}
+@media (max-width: 1024px) and (min-width: 769px) {
+  .musea-grid-3 { grid-template-columns: 1fr 1fr; }
+  .musea-grid-4 { grid-template-columns: 1fr 1fr; }
+}
+
+/* Scroll fade in */
+@keyframes museaFadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.musea-fade-in {
+  animation: museaFadeUp 0.8s ease forwards;
+}
+
+/* Mockup screen */
+.musea-screen-mockup {
+  background: #1a1a1a;
+  border-radius: 24px;
+  padding: 8px;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.6);
+  border: 1px solid #2a2724;
+  overflow: hidden;
+  max-width: 280px;
+}
+.musea-screen-mockup img {
+  border-radius: 18px;
+  width: 100%;
+  display: block;
+}
