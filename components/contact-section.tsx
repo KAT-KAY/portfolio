@@ -1,15 +1,36 @@
 "use client"
 
+import { useState } from "react"
 import { StarDecoration, FloatingStar } from "./star-decoration"
 import { WashiTape } from "./washi-tape"
 import { Mail, Linkedin, Instagram, Twitter, Send } from "lucide-react"
 
 const socialLinks = [
-  { icon: Linkedin, label: "LinkedIn", href: "[your LinkedIn URL]" },
-  { icon: Mail, label: "Email", href: "mailto:[your real email]" }
+  { icon: Linkedin, label: "LinkedIn", href: "#contact" },
+  { icon: Mail, label: "Email", href: "mailto:kaynattahir123@gmail.com" }
 ]
 
 export function ContactSection() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    project: "",
+    message: ""
+  })
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    const subject = encodeURIComponent(`Portfolio Contact: ${formData.project || "General Inquiry"}`)
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\nProject Type: ${formData.project}\n\nMessage:\n${formData.message}`
+    )
+    window.location.href = `mailto:kaynattahir123@gmail.com?subject=${subject}&body=${body}`
+  }
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData(prev => ({ ...prev, [e.target.id]: e.target.value }))
+  }
+
   return (
     <section id="contact" className="py-20 bg-primary/80 paper-texture relative overflow-hidden">
       {/* Floating decorations */}
@@ -78,7 +99,7 @@ export function ContactSection() {
                 Have a project in mind? Let&apos;s chat about it!
               </p>
 
-              <form className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-foreground mb-1">
                     Name
@@ -86,8 +107,11 @@ export function ContactSection() {
                   <input
                     type="text"
                     id="name"
+                    value={formData.name}
+                    onChange={handleChange}
                     className="w-full px-4 py-2 bg-muted border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground"
                     placeholder="Your name"
+                    required
                   />
                 </div>
                 
@@ -98,8 +122,11 @@ export function ContactSection() {
                   <input
                     type="email"
                     id="email"
+                    value={formData.email}
+                    onChange={handleChange}
                     className="w-full px-4 py-2 bg-muted border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground"
                     placeholder="your@email.com"
+                    required
                   />
                 </div>
                 
@@ -109,14 +136,16 @@ export function ContactSection() {
                   </label>
                   <select
                     id="project"
+                    value={formData.project}
+                    onChange={handleChange}
                     className="w-full px-4 py-2 bg-muted border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground"
                   >
                     <option value="">Select a project type</option>
-                    <option value="web">Web Design</option>
-                    <option value="mobile">Mobile App Design</option>
-                    <option value="branding">Branding</option>
-                    <option value="ux-research">UX Research</option>
-                    <option value="other">Other</option>
+                    <option value="Web Design">Web Design</option>
+                    <option value="Mobile App Design">Mobile App Design</option>
+                    <option value="Branding">Branding</option>
+                    <option value="UX Research">UX Research</option>
+                    <option value="Other">Other</option>
                   </select>
                 </div>
                 
@@ -127,8 +156,11 @@ export function ContactSection() {
                   <textarea
                     id="message"
                     rows={4}
+                    value={formData.message}
+                    onChange={handleChange}
                     className="w-full px-4 py-2 bg-muted border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground resize-none"
                     placeholder="Tell me about your project..."
+                    required
                   />
                 </div>
                 

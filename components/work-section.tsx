@@ -6,7 +6,7 @@ import Image from "next/image"
 
 const projects = [
   {
-    title: "ArtVista",
+    title: "Musea",
     category: "Mobile App Design",
     description: "A museum companion app that lets art tourists, students, and enthusiasts scan any painting and instantly access information about the artwork, the artist, and its historical context. Designed to make art accessible for everyone who's ever stood in front of a painting and felt lost.",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/download%20%2863%29-K3zjJDsir2GgARIlxJNx1s2ZPnfRq2.jpg",

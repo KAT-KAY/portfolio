@@ -24,7 +24,7 @@ export function Navigation() {
           {/* Logo */}
           <a href="#home" className="flex items-center gap-2">
             <StarDecoration size="sm" color="primary" />
-            <span className="font-[var(--font-caveat)] text-2xl text-foreground">@kaynat.designs</span>
+            <span className="font-[var(--font-caveat)] text-2xl text-foreground">KaynART</span>
           </a>
 
           {/* Desktop Navigation */}

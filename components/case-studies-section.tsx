@@ -2,6 +2,7 @@
 
 import { StarDecoration, FloatingStar } from "./star-decoration"
 import Image from "next/image"
+import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 
 const caseStudies = [
@@ -15,7 +16,8 @@ const caseStudies = [
     results: ["Validated need through user interviews", "Designed core scan-to-discover user flow", "Created high-fidelity screens in Figma", "Applied AI tools (UX Pilot) to accelerate iteration"],
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/download%20%2863%29-K3zjJDsir2GgARIlxJNx1s2ZPnfRq2.jpg",
     color: "primary",
-    buttonText: "View Full Case Study →"
+    buttonText: "View Full Case Study →",
+    link: "/case-study/musea"
   },
   {
     id: 2,
@@ -27,7 +29,8 @@ const caseStudies = [
     results: ["First solution of its kind in Pakistan", "No app required on the finder's end — just a QR scan", "Includes vaccination alert system for owners", "Designed for low digital literacy — works for anyone with a phone"],
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/download%20%2865%29-Mc1JjrY975V3u2voEDy8quVE5pCRfW.jpg",
     color: "secondary",
-    buttonText: "View Research & Wireframes →"
+    buttonText: "View Research & Wireframes →",
+    link: "/case-study/hifazat-card"
   }
 ]
 
@@ -128,9 +131,10 @@ export function CaseStudiesSection() {
                   </ul>
                 </div>
                 
-                <button className="mt-6 inline-flex items-center gap-2 text-primary font-medium hover:gap-3 transition-all">
+                <Link href={study.link} className="mt-6 inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-full font-bold text-base shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 uppercase tracking-wide">
                   {study.buttonText}
-                </button>
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
               </div>
             </div>
           ))}

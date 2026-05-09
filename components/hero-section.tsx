@@ -39,7 +39,7 @@ export function HeroSection() {
         {/* Text Content */}
         <div className="text-center lg:text-left z-10">
           <p className="text-white/80 text-sm tracking-widest uppercase mb-4">
-            @kaynat.designs • UI/UX Designer & Software Engineer
+            KaynART • UI/UX Designer & Software Engineer
           </p>
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-2">
             meet the
