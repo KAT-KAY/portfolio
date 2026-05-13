@@ -1,18 +1,32 @@
 /* Musea Case Study - Dark Museum Theme */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --musea-bg: #0a0a0a;
-  --musea-surface: #141414;
-  --musea-surface-2: #1a1a1a;
-  --musea-gold: #c9a84c;
-  --musea-gold-dim: #8a7033;
-  --musea-text: #e8e4de;
-  --musea-text-dim: #8a857d;
-  --musea-text-muted: #5a5650;
-  --musea-accent: #d4a853;
-  --musea-border: #2a2724;
-  --musea-serif: 'Cormorant Garamond', Georgia, serif;
+  /* Background tokens — from Figma variables */
+  --musea-bg: #111111;         /* bg/secondary — deepest background */
+  --musea-surface: #1a1a1a;    /* bg/primary   — main surface */
+  --musea-surface-2: #2a2a2a;  /* bg/card      — elevated card surface */
+
+  /* Accent tokens */
+  --musea-gold: #c9a84c;       /* accent/gold */
+  --musea-gold-dim: #a8843a;   /* accent/gold-muted */
+
+  /* Text tokens */
+  --musea-text: #ffffff;       /* text/primary */
+  --musea-text-dim: #aaaaaa;   /* text/secondary */
+  --musea-text-muted: #666666; /* status/inactive */
+  --musea-cream: #f0ead6;      /* text/cream */
+
+  /* Border tokens */
+  --musea-border: #2a2a2a;     /* border/default */
+  --musea-border-gold: #c9a84c;/* border/gold */
+
+  /* Status tokens */
+  --musea-active: #c9a84c;     /* status/active */
+  --musea-inactive: #666666;   /* status/inactive */
+
+  /* Typography */
+  --musea-serif: 'Playfair Display', Georgia, serif;
   --musea-sans: 'Inter', -apple-system, sans-serif;
   --musea-display: 'Space Grotesk', sans-serif;
 }

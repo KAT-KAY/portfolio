@@ -11,15 +11,11 @@ const sections = [
   { id: "problem", label: "Problem" },
   { id: "research", label: "Research" },
   { id: "personas", label: "Personas" },
-  { id: "competitive", label: "Competitive" },
   { id: "journey", label: "Journey" },
-  { id: "ia", label: "IA" },
   { id: "wireframes", label: "Wireframes" },
   { id: "design-system", label: "Design System" },
   { id: "ui-showcase", label: "UI Showcase" },
-  { id: "accessibility", label: "Accessibility" },
   { id: "challenges", label: "Challenges" },
-  { id: "metrics", label: "Metrics" },
   { id: "reflection", label: "Reflection" },
 ]
 
@@ -171,16 +167,32 @@ export default function MuseaCaseStudy() {
             experiences.&rdquo;
           </p>
 
-          {/* Hero Mockup */}
+          {/* Hero Mockup — two screens */}
           <div
             style={{
               display: "flex",
               justifyContent: "center",
-              gap: "20px",
+              gap: "24px",
               marginBottom: "48px",
+              alignItems: "flex-end",
             }}
           >
-            <div className="musea-screen-mockup" style={{ maxWidth: "200px" }}>
+            <div
+              className="musea-screen-mockup musea-float"
+              style={{ maxWidth: "170px", "--r": "-3deg", marginBottom: "18px" } as React.CSSProperties}
+            >
+              <Image
+                src="/musea/figma/home-screen.png"
+                alt="Musea Home Screen"
+                width={170}
+                height={367}
+                style={{ width: "100%", height: "auto" }}
+              />
+            </div>
+            <div
+              className="musea-screen-mockup musea-float"
+              style={{ maxWidth: "200px", "--r": "2deg", animationDelay: "1.5s" } as React.CSSProperties}
+            >
               <Image
                 src="/musea/figma/scanner-screen.png"
                 alt="Musea Scanner Screen"
@@ -307,22 +319,7 @@ export default function MuseaCaseStudy() {
             I used a mix of qualitative and quantitative methods to understand real visitor behaviour, emotional responses, and unmet needs inside gallery spaces.
           </p>
 
-          {/* Methodology */}
-          <div className="musea-grid-2" style={{ marginBottom: "48px" }}>
-            {[
-              { title: "User Interviews", detail: "Conducted in-depth interviews with 8 participants — art students, casual visitors, and art enthusiasts — to understand motivations, frustrations, and current workarounds." },
-              { title: "Contextual Observation", detail: "Spent time in local galleries observing how visitors interacted with plaques, phones, and companions. Noted dwell time, confusion signals, and abandonment patterns." },
-              { title: "Competitor Analysis", detail: "Evaluated Google Arts & Culture, Smartify, and The Met App to identify market gaps, UX patterns, and feature opportunities that existing solutions missed." },
-              { title: "Affinity Mapping", detail: "Synthesised all research findings into thematic clusters to identify the strongest recurring pain points and latent user needs." },
-            ].map((method) => (
-              <div key={method.title} className="musea-card">
-                <h3 style={{ fontFamily: "var(--musea-serif)", fontSize: "1.15rem", color: "var(--musea-text)", marginBottom: "10px" }}>
-                  {method.title}
-                </h3>
-                <p className="musea-body" style={{ fontSize: "0.88rem" }}>{method.detail}</p>
-              </div>
-            ))}
-          </div>
+
 
           {/* Key Insights */}
           <h3 className="musea-subheading" style={{ marginBottom: "24px" }}>Key Research Insights</h3>
@@ -436,72 +433,7 @@ export default function MuseaCaseStudy() {
           </div>
         </div>
       </section>
-      {/* ==================== COMPETITIVE ANALYSIS ==================== */}
-      <section id="competitive" className="musea-section">
-        <div className="musea-container">
-          <p className="musea-section-number">05 — Competitive Analysis</p>
-          <div className="musea-divider" />
 
-          <h2 className="musea-heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", marginBottom: "16px", maxWidth: "700px" }}>
-            What exists — and where the gaps are.
-          </h2>
-          <p className="musea-body" style={{ maxWidth: "600px", marginBottom: "48px" }}>
-            I analysed three leading art/museum apps to understand the competitive landscape and identify opportunities for Musea.
-          </p>
-
-          <div style={{ overflowX: "auto" }}>
-            <table className="musea-table">
-              <thead>
-                <tr>
-                  <th style={{ width: "18%" }}>Feature</th>
-                  <th style={{ width: "27%" }}>Google Arts &amp; Culture</th>
-                  <th style={{ width: "27%" }}>Smartify</th>
-                  <th style={{ width: "27%" }}>The Met App</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style={{ color: "var(--musea-text)", fontWeight: 500 }}>Scan Artwork</td>
-                  <td>Limited — uses image matching, not live scan</td>
-                  <td>Yes — core feature, but patchy database coverage</td>
-                  <td>No — relies on manual search only</td>
-                </tr>
-                <tr>
-                  <td style={{ color: "var(--musea-text)", fontWeight: 500 }}>Plain Language</td>
-                  <td>Mixed — some entries are academic, others editorial</td>
-                  <td>Generally accessible but inconsistent across museums</td>
-                  <td>Academic tone throughout — aimed at researchers</td>
-                </tr>
-                <tr>
-                  <td style={{ color: "var(--musea-text)", fontWeight: 500 }}>Dark Mode</td>
-                  <td>No native dark mode</td>
-                  <td>No native dark mode</td>
-                  <td>No native dark mode</td>
-                </tr>
-                <tr>
-                  <td style={{ color: "var(--musea-text)", fontWeight: 500 }}>Personal Journal</td>
-                  <td>Favourites only — no notes or journalling</td>
-                  <td>Basic bookmarking</td>
-                  <td>No personalisation features</td>
-                </tr>
-                <tr>
-                  <td style={{ color: "var(--musea-text)", fontWeight: 500 }}>Timeline View</td>
-                  <td>Partial — embedded in articles, not browsable</td>
-                  <td>No</td>
-                  <td>Yes — excellent chronological browsing</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div className="musea-card musea-card-gold" style={{ marginTop: "32px", maxWidth: "700px" }}>
-            <p className="musea-subheading" style={{ marginBottom: "8px" }}>Key Opportunity</p>
-            <p className="musea-body" style={{ fontSize: "0.95rem" }}>
-              No existing app combines scan-to-learn, plain-language descriptions, dark mode for gallery lighting, and a personal journal — all in one cohesive, museum-optimised experience. This is the gap Musea fills.
-            </p>
-          </div>
-        </div>
-      </section>
 
       {/* ==================== USER JOURNEY ==================== */}
       <section id="journey" className="musea-section" style={{ background: "var(--musea-surface)" }}>
@@ -516,66 +448,7 @@ export default function MuseaCaseStudy() {
             I mapped two primary user flows to understand touchpoints, emotional states, and opportunities for Musea to add value.
           </p>
 
-          {/* Flow 1 */}
-          <h3 className="musea-subheading" style={{ marginBottom: "28px" }}>Flow 1 — Scan &amp; Learn</h3>
-          <div style={{ marginBottom: "56px" }}>
-            {[
-              { step: "1", action: "User enters gallery", emotion: "Curious but slightly overwhelmed", touch: "Physical environment" },
-              { step: "2", action: "Spots an interesting painting", emotion: "Intrigued — wants to know more", touch: "Visual discovery" },
-              { step: "3", action: "Opens Musea → taps Scan", emotion: "Hopeful — expects quick info", touch: "App home → Scanner" },
-              { step: "4", action: "Points camera at artwork", emotion: "Engaged — feels like a discovery tool", touch: "Camera interface" },
-              { step: "5", action: "Receives artwork info instantly", emotion: "Satisfied — \"this is exactly what I needed\"", touch: "Art detail screen" },
-              { step: "6", action: "Saves to journal / continues browsing", emotion: "Empowered — feels informed", touch: "Journal / Gallery" },
-            ].map((item, i, arr) => (
-              <div key={item.step} className="musea-journey-step" style={{ marginBottom: i < arr.length - 1 ? "24px" : 0 }}>
-                <div style={{ position: "relative" }}>
-                  <div className="musea-journey-dot" />
-                  {i < arr.length - 1 && <div className="musea-journey-line" />}
-                </div>
-                <div style={{ flex: 1 }}>
-                  <p style={{ fontFamily: "var(--musea-serif)", fontSize: "1.05rem", color: "var(--musea-text)", marginBottom: "4px" }}>
-                    {item.action}
-                  </p>
-                  <p style={{ fontSize: "0.8rem", color: "var(--musea-gold-dim)", marginBottom: "2px", fontStyle: "italic" }}>
-                    {item.emotion}
-                  </p>
-                  <p style={{ fontSize: "0.75rem", color: "var(--musea-text-muted)" }}>
-                    Touchpoint: {item.touch}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
 
-          {/* Flow 2 */}
-          <h3 className="musea-subheading" style={{ marginBottom: "28px" }}>Flow 2 — Search &amp; Study</h3>
-          <div>
-            {[
-              { step: "1", action: "User opens Musea at home / in class", emotion: "Focused — studying or preparing", touch: "App home" },
-              { step: "2", action: "Searches for \"Renaissance\" or \"Impressionism\"", emotion: "Goal-directed — knows what they want", touch: "Search bar" },
-              { step: "3", action: "Browses search results with thumbnails", emotion: "Exploring — scanning for relevance", touch: "Search results" },
-              { step: "4", action: "Opens art movement detail page", emotion: "Learning — absorbing context", touch: "Movement detail screen" },
-              { step: "5", action: "Bookmarks page / takes notes in journal", emotion: "Satisfied — built a personal reference", touch: "Journal / Bookmark" },
-            ].map((item, i, arr) => (
-              <div key={item.step} className="musea-journey-step" style={{ marginBottom: i < arr.length - 1 ? "24px" : 0 }}>
-                <div style={{ position: "relative" }}>
-                  <div className="musea-journey-dot" />
-                  {i < arr.length - 1 && <div className="musea-journey-line" />}
-                </div>
-                <div style={{ flex: 1 }}>
-                  <p style={{ fontFamily: "var(--musea-serif)", fontSize: "1.05rem", color: "var(--musea-text)", marginBottom: "4px" }}>
-                    {item.action}
-                  </p>
-                  <p style={{ fontSize: "0.8rem", color: "var(--musea-gold-dim)", marginBottom: "2px", fontStyle: "italic" }}>
-                    {item.emotion}
-                  </p>
-                  <p style={{ fontSize: "0.75rem", color: "var(--musea-text-muted)" }}>
-                    Touchpoint: {item.touch}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
 
           {/* User's sketch of user flows */}
           <div style={{ marginTop: "56px" }}>
@@ -588,51 +461,7 @@ export default function MuseaCaseStudy() {
         </div>
       </section>
 
-      {/* ==================== INFORMATION ARCHITECTURE ==================== */}
-      <section id="ia" className="musea-section">
-        <div className="musea-container">
-          <p className="musea-section-number">07 — Information Architecture</p>
-          <div className="musea-divider" />
 
-          <h2 className="musea-heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", marginBottom: "16px", maxWidth: "700px" }}>
-            Structuring the experience around four pillars.
-          </h2>
-          <p className="musea-body" style={{ maxWidth: "600px", marginBottom: "48px" }}>
-            The app&rsquo;s navigation is built around four core user needs — each mapped to a primary tab that feels intuitive from the first interaction.
-          </p>
-
-          {/* IA Diagram */}
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "32px" }}>
-            {/* Root */}
-            <div className="musea-ia-node primary" style={{ padding: "16px 32px", fontSize: "1rem", fontFamily: "var(--musea-serif)" }}>
-              Musea App
-            </div>
-
-            {/* Connector line */}
-            <div style={{ width: "2px", height: "32px", background: "var(--musea-gold-dim)" }} />
-
-            {/* 4 pillars */}
-            <div className="musea-grid-4" style={{ width: "100%" }}>
-              {[
-                { name: "Home", children: ["Daily Inspiration", "Trending Exhibitions", "Recommended Artists", "Search Bar"] },
-                { name: "Scan", children: ["Camera View", "Artwork Recognition", "Art Detail View", "Save to Journal"] },
-                { name: "Timeline", children: ["Art Movements", "Historical Periods", "Artists by Era", "Key Works"] },
-                { name: "My Journal", children: ["Saved Artworks", "Personal Notes", "Visit History", "Bookmarks"] },
-              ].map((pillar) => (
-                <div key={pillar.name} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "12px" }}>
-                  <div className="musea-ia-node primary" style={{ width: "100%" }}>{pillar.name}</div>
-                  <div style={{ width: "1px", height: "16px", background: "var(--musea-border)" }} />
-                  <div style={{ display: "flex", flexDirection: "column", gap: "6px", width: "100%" }}>
-                    {pillar.children.map((child) => (
-                      <div key={child} className="musea-ia-node" style={{ fontSize: "0.78rem" }}>{child}</div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* ==================== WIREFRAMES & IDEATION ==================== */}
       <section id="wireframes" className="musea-section" style={{ background: "var(--musea-surface)" }}>
@@ -695,21 +524,108 @@ export default function MuseaCaseStudy() {
             The design system draws from the atmosphere of real galleries — dark walls that let art breathe, warm gold accents that echo antique frames, and typography that balances classical elegance with modern readability.
           </p>
 
-          {/* Color Palette */}
+          {/* Colour Palette — from Figma */}
           <h3 className="musea-subheading" style={{ marginBottom: "20px" }}>Colour Palette</h3>
-          <div className="musea-grid-4" style={{ marginBottom: "48px" }}>
+          <div style={{ display: "flex", gap: "0", marginBottom: "12px", borderRadius: "8px", overflow: "hidden", boxShadow: "0 8px 32px rgba(0,0,0,0.5)" }}>
             {[
-              { color: "#0a0a0a", name: "Museum Black", hex: "#0A0A0A" },
-              { color: "#141414", name: "Gallery Surface", hex: "#141414" },
-              { color: "#c9a84c", name: "Antique Gold", hex: "#C9A84C" },
-              { color: "#e8e4de", name: "Parchment", hex: "#E8E4DE" },
-            ].map((swatch) => (
-              <div key={swatch.name}>
-                <div className="musea-swatch" style={{ background: swatch.color, border: "1px solid var(--musea-border)" }} />
-                <p style={{ fontSize: "0.85rem", color: "var(--musea-text)", marginBottom: "2px" }}>{swatch.name}</p>
-                <p style={{ fontSize: "0.75rem", color: "var(--musea-text-muted)", fontFamily: "var(--musea-display)" }}>{swatch.hex}</p>
+              { color: "#111111", label: "bg/secondary" },
+              { color: "#666666", label: "status/inactive" },
+              { color: "#a8843a", label: "accent/gold-muted" },
+              { color: "#c9a84c", label: "accent/gold" },
+              { color: "#f0ead6", label: "text/cream" },
+            ].map((s) => (
+              <div key={s.color} style={{ flex: 1, background: s.color, height: "120px" }} title={s.label} />
+            ))}
+          </div>
+          <div style={{ display: "flex", gap: "0", marginBottom: "48px" }}>
+            {[
+              { color: "#111111", label: "bg/secondary" },
+              { color: "#666666", label: "status/inactive" },
+              { color: "#a8843a", label: "accent/gold-muted" },
+              { color: "#c9a84c", label: "accent/gold" },
+              { color: "#f0ead6", label: "text/cream" },
+            ].map((s) => (
+              <div key={s.color} style={{ flex: 1, textAlign: "center", paddingTop: "8px" }}>
+                <p style={{ fontSize: "0.7rem", fontFamily: "var(--musea-display)", color: "var(--musea-text-muted)", letterSpacing: "0.05em" }}>{s.label}</p>
+                <p style={{ fontSize: "0.65rem", color: "var(--musea-text-muted)", marginTop: "2px" }}>{s.color.toUpperCase()}</p>
               </div>
             ))}
+          </div>
+
+          {/* Figma Variables */}
+          <h3 className="musea-subheading" style={{ marginBottom: "20px" }}>Figma Design Tokens</h3>
+          <div className="musea-grid-2" style={{ marginBottom: "48px", gap: "16px" }}>
+            {[
+              {
+                group: "bg",
+                vars: [
+                  { token: "bg/primary",   value: "#1A1A1A", color: "#1a1a1a" },
+                  { token: "bg/secondary", value: "#111111", color: "#111111" },
+                  { token: "bg/card",      value: "#2A2A2A", color: "#2a2a2a" },
+                ],
+              },
+              {
+                group: "accent",
+                vars: [
+                  { token: "accent/gold",       value: "#C9A84C", color: "#c9a84c" },
+                  { token: "accent/gold-muted",  value: "#A8843A", color: "#a8843a" },
+                ],
+              },
+              {
+                group: "text",
+                vars: [
+                  { token: "text/primary",   value: "#FFFFFF", color: "#ffffff" },
+                  { token: "text/secondary", value: "#AAAAAA", color: "#aaaaaa" },
+                  { token: "text/cream",     value: "#F0EAD6", color: "#f0ead6" },
+                ],
+              },
+              {
+                group: "border & status",
+                vars: [
+                  { token: "border/default",   value: "#2A2A2A", color: "#2a2a2a" },
+                  { token: "border/gold",       value: "#C9A84C", color: "#c9a84c" },
+                  { token: "status/active",     value: "#C9A84C", color: "#c9a84c" },
+                  { token: "status/inactive",   value: "#666666", color: "#666666" },
+                ],
+              },
+            ].map((group) => (
+              <div key={group.group} className="musea-card" style={{ padding: "24px" }}>
+                <p className="musea-subheading" style={{ marginBottom: "16px", fontSize: "0.6rem" }}>{group.group}</p>
+                <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+                  {group.vars.map((v) => (
+                    <div key={v.token} style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                      <div style={{ width: "28px", height: "28px", borderRadius: "6px", background: v.color, border: "1px solid rgba(255,255,255,0.08)", flexShrink: 0 }} />
+                      <div style={{ flex: 1 }}>
+                        <p style={{ fontSize: "0.78rem", color: "var(--musea-text)", fontFamily: "var(--musea-display)" }}>{v.token}</p>
+                      </div>
+                      <p style={{ fontSize: "0.72rem", color: "var(--musea-text-muted)", fontFamily: "var(--musea-display)" }}>{v.value}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Spacing Scale */}
+          <h3 className="musea-subheading" style={{ marginBottom: "20px" }}>Spacing Scale</h3>
+          <div className="musea-card" style={{ padding: "24px", marginBottom: "48px" }}>
+            <div style={{ display: "flex", alignItems: "flex-end", gap: "24px", flexWrap: "wrap" }}>
+              {[
+                { token: "xs",  value: 4 },
+                { token: "sm",  value: 8 },
+                { token: "md",  value: 16 },
+                { token: "lg",  value: 24 },
+                { token: "xl",  value: 32 },
+                { token: "2xl", value: 48 },
+              ].map((sp) => (
+                <div key={sp.token} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "8px" }}>
+                  <div style={{ width: `${Math.min(sp.value * 2, 96)}px`, height: `${Math.min(sp.value * 2, 96)}px`, background: "rgba(201,168,76,0.15)", border: "1px solid var(--musea-gold-dim)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                    <span style={{ fontSize: "0.65rem", color: "var(--musea-gold)", fontFamily: "var(--musea-display)" }}>{sp.value}px</span>
+                  </div>
+                  <p style={{ fontSize: "0.7rem", color: "var(--musea-text-muted)", fontFamily: "var(--musea-display)", letterSpacing: "0.1em", textTransform: "uppercase" }}>{sp.token}</p>
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Typography */}
@@ -717,13 +633,14 @@ export default function MuseaCaseStudy() {
           <div className="musea-grid-2" style={{ marginBottom: "48px" }}>
             <div className="musea-card">
               <p style={{ fontSize: "0.7rem", color: "var(--musea-text-muted)", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: "12px" }}>Headings</p>
-              <p style={{ fontFamily: "var(--musea-serif)", fontSize: "2.5rem", fontWeight: 300, color: "var(--musea-text)", lineHeight: 1.1, marginBottom: "8px" }}>Cormorant Garamond</p>
-              <p className="musea-body" style={{ fontSize: "0.83rem" }}>Light weight, elegant serif. Used for section headings and display text. Evokes classical art catalogues and museum signage.</p>
+              <p style={{ fontFamily: "var(--musea-serif)", fontSize: "2.5rem", fontWeight: 600, color: "var(--musea-text)", lineHeight: 1.1, marginBottom: "4px" }}>Playfair Display</p>
+              <p style={{ fontFamily: "var(--musea-serif)", fontSize: "1.4rem", fontWeight: 400, fontStyle: "italic", color: "var(--musea-gold)", lineHeight: 1.3, marginBottom: "12px" }}>Playfair Display &mdash; italics</p>
+              <p className="musea-body" style={{ fontSize: "0.83rem" }}>Classic editorial serif with strong contrast between thick and thin strokes. Used for all display headings and section titles. Italic variant used for pull quotes and art titles.</p>
             </div>
             <div className="musea-card">
               <p style={{ fontSize: "0.7rem", color: "var(--musea-text-muted)", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: "12px" }}>Body &amp; UI</p>
-              <p style={{ fontFamily: "var(--musea-sans)", fontSize: "2rem", fontWeight: 300, color: "var(--musea-text)", lineHeight: 1.1, marginBottom: "8px" }}>Inter</p>
-              <p className="musea-body" style={{ fontSize: "0.83rem" }}>Clean sans-serif for body text, labels, and interface elements. Optimised for screen readability at small sizes.</p>
+              <p style={{ fontFamily: "var(--musea-sans)", fontSize: "2rem", fontWeight: 300, color: "var(--musea-text)", lineHeight: 1.1, marginBottom: "8px" }}>Inter &mdash; light</p>
+              <p className="musea-body" style={{ fontSize: "0.83rem" }}>Clean geometric sans-serif at 300 weight for body text and UI labels. Optimised for legibility at small sizes, high-contrast environments, and extended reading in low-light gallery conditions.</p>
             </div>
           </div>
 
@@ -767,7 +684,34 @@ export default function MuseaCaseStudy() {
             High-fidelity screens designed in Figma, optimised for dark museum environments, one-handed use, and instant comprehension.
           </p>
 
-          {/* Screen 1 — Search */}
+          {/* Screen 1 — Home */}
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "64px", alignItems: "center", marginBottom: "80px" }}>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <div className="musea-screen-mockup" style={{ maxWidth: "280px" }}>
+                <Image
+                  src="/musea/figma/home-screen.png"
+                  alt="Musea home screen showing Good Morning greeting, Daily Inspiration artwork, Movements filter pills, and Trending Artists carousel"
+                  width={280}
+                  height={600}
+                  style={{ width: "100%", height: "auto" }}
+                />
+              </div>
+            </div>
+            <div>
+              <p className="musea-subheading" style={{ marginBottom: "12px" }}>Home &amp; Discovery</p>
+              <h3 className="musea-heading" style={{ fontSize: "1.8rem", marginBottom: "16px" }}>
+                Your personalised gateway to the world of art.
+              </h3>
+              <p className="musea-body" style={{ marginBottom: "16px" }}>
+                The home screen greets users by name and surfaces a curated Daily Inspiration — a featured artwork that rotates daily to encourage habitual engagement. Movement pills (Renaissance, Baroque, Impressionism) allow instant one-tap filtering.
+              </p>
+              <p className="musea-body">
+                The Trending Artists carousel drives serendipitous discovery, while the persistent gold Scan button in the bottom navigation keeps the core feature always one tap away.
+              </p>
+            </div>
+          </div>
+
+          {/* Screen 2 — Search */}
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "64px", alignItems: "center", marginBottom: "80px" }}>
             <div>
               <p className="musea-subheading" style={{ marginBottom: "12px" }}>Search &amp; Discover</p>
@@ -809,53 +753,220 @@ export default function MuseaCaseStudy() {
             </div>
           </div>
 
+          {/* Screen 4 — Artwork Detail */}
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "64px", alignItems: "center", marginBottom: "80px" }}>
+            <div>
+              <p className="musea-subheading" style={{ marginBottom: "12px" }}>Artwork Detail</p>
+              <h3 className="musea-heading" style={{ fontSize: "1.8rem", marginBottom: "16px" }}>
+                Everything you want to know — one tap after scanning.
+              </h3>
+              <p className="musea-body" style={{ marginBottom: "16px" }}>
+                The detail screen presents a full-bleed hero image of the artwork, followed by structured metadata — artist, year, medium, and dimensions — in a clean two-column grid. A gold progress bar subtly signals content depth below the fold.
+              </p>
+              <p className="musea-body">
+                Two clear CTAs — Share and Save to Favourites — remain always visible. The tabbed History / Artist / Related Works section lets users choose their depth of exploration. A location card grounds the digital experience in the physical gallery.
+              </p>
+            </div>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <div className="musea-screen-mockup" style={{ maxWidth: "280px" }}>
+                <Image
+                  src="/musea/figma/artwork-detail.png"
+                  alt="Musea artwork detail screen showing The Starry Night with metadata, Share and Save to Favourites buttons, and tabbed History section"
+                  width={280}
+                  height={600}
+                  style={{ width: "100%", height: "auto" }}
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Screen 5 — My Journal */}
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "64px", alignItems: "center", marginBottom: "80px" }}>
+            <div style={{ display: "flex", justifyContent: "center", order: -1 }}>
+              <div className="musea-screen-mockup" style={{ maxWidth: "280px" }}>
+                <Image
+                  src="/musea/figma/journal-screen.png"
+                  alt="Musea My Journal screen showing bookmarked artworks — The Starry Night, Girl with a Pearl Earring, The Great Wave — with recent notes"
+                  width={280}
+                  height={600}
+                  style={{ width: "100%", height: "auto" }}
+                />
+              </div>
+            </div>
+            <div>
+              <p className="musea-subheading" style={{ marginBottom: "12px" }}>My Journal</p>
+              <h3 className="musea-heading" style={{ fontSize: "1.8rem", marginBottom: "16px" }}>
+                Your personal art collection, always with you.
+              </h3>
+              <p className="musea-body" style={{ marginBottom: "16px" }}>
+                The Journal gives users a space to own their experience. Tabbed navigation across Bookmarks, Notes, and Visited creates three distinct layers of engagement. Quick-glance stats (12 items saved, 4 galleries) reinforce the habit loop.
+              </p>
+              <p className="musea-body">
+                Recent Notes shows timestamped personal observations — a feature that transforms passive art appreciation into active, reflective learning.
+              </p>
+            </div>
+          </div>
+
+          {/* Screen 6 — Exhibition Detail */}
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "64px", alignItems: "center", marginBottom: "80px" }}>
+            <div>
+              <p className="musea-subheading" style={{ marginBottom: "12px" }}>Exhibition Detail</p>
+              <h3 className="musea-heading" style={{ fontSize: "1.8rem", marginBottom: "16px" }}>
+                Plan your visit before you arrive.
+              </h3>
+              <p className="musea-body" style={{ marginBottom: "16px" }}>
+                The exhibition screen uses a full-bleed hero painting as the backdrop, overlaying key details — series name, title, venue, and dates — in a visually immersive layout. The gold “Add to Planner” CTA makes it actionable in one tap.
+              </p>
+              <p className="musea-body">
+                Location, opening hours, and a Related Exhibitions carousel ensure users stay in context and discover more — turning a single visit into a broader cultural journey.
+              </p>
+            </div>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <div className="musea-screen-mockup" style={{ maxWidth: "280px" }}>
+                <Image
+                  src="/musea/figma/exhibition-detail.png"
+                  alt="Exhibition detail screen for Vermeer at the Rijksmuseum showing hero artwork, dates, Add to Planner CTA, location, and Related Exhibitions"
+                  width={280}
+                  height={600}
+                  style={{ width: "100%", height: "auto" }}
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Screen 7 — Movement Detail */}
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "64px", alignItems: "center", marginBottom: "80px" }}>
+            <div style={{ display: "flex", justifyContent: "center", order: -1 }}>
+              <div className="musea-screen-mockup" style={{ maxWidth: "280px" }}>
+                <Image
+                  src="/musea/figma/movement-detail.png"
+                  alt="Movement detail screen for Renaissance showing full-bleed ceiling fresco, century range, interactive timeline, Key Artists and Key Works sections"
+                  width={280}
+                  height={600}
+                  style={{ width: "100%", height: "auto" }}
+                />
+              </div>
+            </div>
+            <div>
+              <p className="musea-subheading" style={{ marginBottom: "12px" }}>Movement Detail</p>
+              <h3 className="musea-heading" style={{ fontSize: "1.8rem", marginBottom: "16px" }}>
+                Deep dive into any era of art history.
+              </h3>
+              <p className="musea-body" style={{ marginBottom: "16px" }}>
+                Each art movement gets a cinematic full-screen entry — a defining artwork fills the hero, overlaid with the movement name and century range. An interactive dot timeline charts the period at a glance.
+              </p>
+              <p className="musea-body">
+                Key Artists and Key Works sections surface the most iconic figures and paintings. The gold “Explore Full Timeline” CTA connects this screen back to the broader Timeline tab, creating a seamless learning loop.
+              </p>
+            </div>
+          </div>
+
+          {/* Screen 8 — Timeline */}
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "64px", alignItems: "center", marginBottom: "80px" }}>
+            <div>
+              <p className="musea-subheading" style={{ marginBottom: "12px" }}>Timeline</p>
+              <h3 className="musea-heading" style={{ fontSize: "1.8rem", marginBottom: "16px" }}>
+                The entire history of art, beautifully scrollable.
+              </h3>
+              <p className="musea-body" style={{ marginBottom: "16px" }}>
+                The Timeline screen lists all major art movements in chronological order on a vertical dot-line timeline. Each entry shows the era, movement name, a one-line description, location tags, and a representative artwork thumbnail.
+              </p>
+              <p className="musea-body">
+                This screen serves as both a learning tool and a navigation hub — tapping any movement opens the Movement Detail screen, giving users a consistent, explorable structure across the entire history of art.
+              </p>
+            </div>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <div className="musea-screen-mockup" style={{ maxWidth: "280px" }}>
+                <Image
+                  src="/musea/figma/timeline-screen.png"
+                  alt="Timeline screen showing art movements on a vertical dot timeline — Impressionism, Ancient Art, Renaissance, Baroque, Surrealism, Pop Art"
+                  width={280}
+                  height={600}
+                  style={{ width: "100%", height: "auto" }}
+                />
+              </div>
+            </div>
+          </div>
+
           {/* Floating composition with all screens */}
           <div style={{ marginTop: "32px", textAlign: "center" }}>
-            <h3 className="musea-subheading" style={{ marginBottom: "32px" }}>All Key Screens</h3>
-            <div style={{ display: "flex", justifyContent: "center", gap: "24px", flexWrap: "wrap" }}>
-              <div className="musea-screen-mockup musea-float" style={{ maxWidth: "200px", "--r": "-3deg" } as React.CSSProperties}>
-                <Image src="/musea/figma/search-screen.png" alt="Search screen" width={200} height={430} style={{ width: "100%", height: "auto" }} />
+            <h3 className="musea-subheading" style={{ marginBottom: "8px" }}>All Key Screens</h3>
+            <p className="musea-body" style={{ fontSize: "0.85rem", marginBottom: "40px", color: "var(--musea-text-muted)" }}>8 screens designed end-to-end in Figma</p>
+            <div style={{ display: "flex", justifyContent: "center", gap: "14px", flexWrap: "wrap", alignItems: "flex-end" }}>
+              <div className="musea-screen-mockup musea-float" style={{ maxWidth: "140px", "--r": "-4deg", marginBottom: "16px" } as React.CSSProperties}>
+                <Image src="/musea/figma/home-screen.png" alt="Home screen" width={140} height={302} style={{ width: "100%", height: "auto" }} />
               </div>
-              <div className="musea-screen-mockup musea-float" style={{ maxWidth: "220px", "--r": "0deg", animationDelay: "1s", marginTop: "-20px" } as React.CSSProperties}>
-                <Image src="/musea/figma/scanner-screen.png" alt="Scanner screen" width={220} height={475} style={{ width: "100%", height: "auto" }} />
+              <div className="musea-screen-mockup musea-float" style={{ maxWidth: "148px", "--r": "-2deg", animationDelay: "0.3s" } as React.CSSProperties}>
+                <Image src="/musea/figma/search-screen.png" alt="Search screen" width={148} height={319} style={{ width: "100%", height: "auto" }} />
               </div>
+              <div className="musea-screen-mockup musea-float" style={{ maxWidth: "155px", "--r": "0deg", animationDelay: "0.6s", marginBottom: "16px" } as React.CSSProperties}>
+                <Image src="/musea/figma/scanner-screen.png" alt="Scanner screen" width={155} height={334} style={{ width: "100%", height: "auto" }} />
+              </div>
+              <div className="musea-screen-mockup musea-float" style={{ maxWidth: "148px", "--r": "1.5deg", animationDelay: "0.9s" } as React.CSSProperties}>
+                <Image src="/musea/figma/artwork-detail.png" alt="Artwork detail" width={148} height={319} style={{ width: "100%", height: "auto" }} />
+              </div>
+              <div className="musea-screen-mockup musea-float" style={{ maxWidth: "148px", "--r": "2.5deg", animationDelay: "1.2s", marginBottom: "16px" } as React.CSSProperties}>
+                <Image src="/musea/figma/journal-screen.png" alt="Journal screen" width={148} height={319} style={{ width: "100%", height: "auto" }} />
+              </div>
+              <div className="musea-screen-mockup musea-float" style={{ maxWidth: "155px", "--r": "3deg", animationDelay: "1.5s" } as React.CSSProperties}>
+                <Image src="/musea/figma/exhibition-detail.png" alt="Exhibition detail" width={155} height={334} style={{ width: "100%", height: "auto" }} />
+              </div>
+              <div className="musea-screen-mockup musea-float" style={{ maxWidth: "148px", "--r": "4deg", animationDelay: "1.8s", marginBottom: "16px" } as React.CSSProperties}>
+                <Image src="/musea/figma/movement-detail.png" alt="Movement detail" width={148} height={319} style={{ width: "100%", height: "auto" }} />
+              </div>
+              <div className="musea-screen-mockup musea-float" style={{ maxWidth: "140px", "--r": "5deg", animationDelay: "2.1s" } as React.CSSProperties}>
+                <Image src="/musea/figma/timeline-screen.png" alt="Timeline screen" width={140} height={302} style={{ width: "100%", height: "auto" }} />
+              </div>
+            </div>
+          </div>
+
+          {/* Interactive Prototype */}
+          <div id="prototyping" style={{ marginTop: "96px", scrollMarginTop: "80px" }}>
+            <p className="musea-subheading" style={{ marginBottom: "12px" }}>Interactive Prototype</p>
+            <div className="musea-divider" />
+            <h3 className="musea-heading" style={{ fontSize: "clamp(1.8rem, 3vw, 2.6rem)", marginBottom: "16px", maxWidth: "700px" }}>
+              All screens connected — the complete user flow.
+            </h3>
+            <p className="musea-body" style={{ maxWidth: "620px", marginBottom: "40px" }}>
+              The Figma prototype links all 8 screens into a fully interactive user flow. Every interaction state, navigation transition, and screen connection was mapped to simulate the real app experience for usability walkthroughs and stakeholder reviews.
+            </p>
+
+            {/* Prototype screenshot in browser chrome */}
+            <div style={{ borderRadius: "12px", overflow: "hidden", border: "1px solid var(--musea-border)", background: "var(--musea-surface-2)", boxShadow: "0 24px 64px rgba(0,0,0,0.5)" }}>
+              <div style={{ padding: "12px 20px", background: "rgba(201,168,76,0.06)", borderBottom: "1px solid var(--musea-border)", display: "flex", alignItems: "center", gap: "8px" }}>
+                <div style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#ff5f57" }} />
+                <div style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#febc2e" }} />
+                <div style={{ width: "10px", height: "10px", borderRadius: "50%", background: "#28c840" }} />
+                <span style={{ fontSize: "0.72rem", color: "var(--musea-text-muted)", fontFamily: "var(--musea-display)", marginLeft: "12px", letterSpacing: "0.05em" }}>
+                  Figma — Flow 1 · 8 Screens · 3587 × 1724
+                </span>
+              </div>
+              <Image
+                src="/musea/figma/prototype-flow.JPG"
+                alt="Figma prototype flow diagram showing all 8 Musea screens — Home, Scanner, Art Info, Search, Exhibition, Movement Detail, Timeline, My Journal — connected with interactive prototype arrows across Flow 1"
+                width={1200}
+                height={576}
+                style={{ width: "100%", height: "auto", display: "block" }}
+              />
+            </div>
+
+            <div className="musea-grid-3" style={{ marginTop: "24px" }}>
+              {[
+                { stat: "8", label: "Screens", sub: "Fully linked in Figma" },
+                { stat: "Flow 1", label: "Prototype Flow", sub: "Complete end-to-end journey" },
+                { stat: "100%", label: "Interactive States", sub: "Every tap state designed" },
+              ].map((item) => (
+                <div key={item.stat} className="musea-card" style={{ textAlign: "center", padding: "20px" }}>
+                  <div style={{ fontFamily: "var(--musea-serif)", fontSize: "1.8rem", fontWeight: 600, color: "var(--musea-gold)", marginBottom: "4px" }}>{item.stat}</div>
+                  <p style={{ fontSize: "0.82rem", color: "var(--musea-text)", marginBottom: "4px" }}>{item.label}</p>
+                  <p style={{ fontSize: "0.72rem", color: "var(--musea-text-muted)" }}>{item.sub}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
-      {/* ==================== ACCESSIBILITY ==================== */}
-      <section id="accessibility" className="musea-section">
-        <div className="musea-container">
-          <p className="musea-section-number">11 — Accessibility Considerations</p>
-          <div className="musea-divider" />
 
-          <h2 className="musea-heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", marginBottom: "16px", maxWidth: "700px" }}>
-            Designed to be understood by everyone.
-          </h2>
-          <p className="musea-body" style={{ maxWidth: "600px", marginBottom: "48px" }}>
-            Accessibility was not an afterthought — it was embedded into every design decision from typography to interaction patterns.
-          </p>
-
-          <div className="musea-grid-2">
-            {[
-              { icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.076-4.076a1.526 1.526 0 0 1 1.037-.443 48.282 48.282 0 0 0 5.399-.586c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z"/></svg>, title: "Readable Typography", desc: "Body text uses Inter at 16px+ with 1.8 line height. Headings use Cormorant Garamond at generous sizes. No decorative fonts in content areas." },
-              { icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"/></svg>, title: "High Contrast", desc: "Gold (#C9A84C) on dark backgrounds passes WCAG AA for large text. Body text (#8A857D) is used at sizes above 18px for comfortable readability." },
-              { icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 6.002-2.082 9.72 9.72 0 0 0 3-3.916Z"/></svg>, title: "Dark Mode Native", desc: "The entire app is built dark-first for museum environments where bright screens are disruptive. Reduces eye strain during extended gallery visits." },
-              { icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"/></svg>, title: "Large Tap Targets", desc: "All interactive elements are minimum 44×44px. The scan button is oversized and centred for easy one-handed thumb access." },
-              { icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M9.568 3H5.25A2.25 2.25 0 0 0 3 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 0 0 5.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 0 0 9.568 3Z"/><path d="M6 6h.008v.008H6V6Z"/></svg>, title: "Icon + Label Pairing", desc: "Every icon in the navigation and UI is paired with a text label. No icon-only interactions — reducing guesswork for all users." },
-              { icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M10.34 15.84c-.688-.06-1.386-.09-2.09-.09H7.5a4.5 4.5 0 1 1 0-9h.75c.704 0 1.402-.03 2.09-.09m0 9.18c.253.962.584 1.892.985 2.783.247.55.06 1.21-.463 1.511l-.657.38c-.551.318-1.26.117-1.527-.461a20.845 20.845 0 0 1-1.44-4.282m3.102.069a18.03 18.03 0 0 1-.59-4.59c0-1.586.205-3.124.59-4.59m0 9.18a23.848 23.848 0 0 1 8.835 2.535M10.34 6.66a23.847 23.847 0 0 0 8.835-2.535m0 0A23.74 23.74 0 0 0 18.795 3m.38 1.125a23.91 23.91 0 0 1 1.014 5.395m-1.014 8.855c-.118.38-.245.754-.38 1.125m.38-1.125a23.91 23.91 0 0 0 1.014-5.395m0-3.46c.495.413.811 1.035.811 1.73 0 .695-.316 1.317-.811 1.73m0-3.46a24.347 24.347 0 0 1 0 3.46"/></svg>, title: "Simplified Language", desc: "Art terminology is explained in plain language with optional \"learn more\" expansions. Content is written at a conversational reading level." },
-            ].map((item) => (
-              <div key={item.title} className="musea-a11y-item">
-                <div className="musea-a11y-icon" style={{ color: "var(--musea-gold)" }}>{item.icon}</div>
-                <div>
-                  <h3 style={{ fontFamily: "var(--musea-serif)", fontSize: "1.05rem", color: "var(--musea-text)", marginBottom: "6px" }}>{item.title}</h3>
-                  <p className="musea-body" style={{ fontSize: "0.83rem" }}>{item.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ==================== CHALLENGES & DECISIONS ==================== */}
       <section id="challenges" className="musea-section" style={{ background: "var(--musea-surface)" }}>
@@ -890,37 +1001,7 @@ export default function MuseaCaseStudy() {
         </div>
       </section>
 
-      {/* ==================== SUCCESS METRICS ==================== */}
-      <section id="metrics" className="musea-section">
-        <div className="musea-container">
-          <p className="musea-section-number">13 — Success Metrics</p>
-          <div className="musea-divider" />
 
-          <h2 className="musea-heading" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", marginBottom: "16px", maxWidth: "700px" }}>
-            How we would measure impact.
-          </h2>
-          <p className="musea-body" style={{ maxWidth: "600px", marginBottom: "48px" }}>
-            While this is a concept project, I defined success metrics that would guide real product decisions post-launch.
-          </p>
-
-          <div className="musea-grid-3" style={{ marginBottom: "48px" }}>
-            {[
-              { value: "85%", label: "Target scan-to-detail completion rate", sub: "Users who scan should reach the detail screen" },
-              { value: "3.2x", label: "Target avg. artworks explored per session", sub: "Measuring engagement depth per visit" },
-              { value: "40%", label: "Target journal save rate", sub: "Users saving at least one item per session" },
-              { value: "60s", label: "Target avg. time on art detail screen", sub: "Enough to absorb key information" },
-              { value: "72%", label: "Target Day-7 retention", sub: "Users returning within a week of first use" },
-              { value: "4.5+", label: "Target app store rating", sub: "Based on usability and content quality" },
-            ].map((metric) => (
-              <div key={metric.label} className="musea-metric">
-                <div className="musea-metric-value">{metric.value}</div>
-                <p className="musea-metric-label" style={{ textTransform: "none", letterSpacing: "normal", lineHeight: 1.5, marginBottom: "4px" }}>{metric.label}</p>
-                <p style={{ fontSize: "0.7rem", color: "var(--musea-text-muted)" }}>{metric.sub}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ==================== FINAL REFLECTION ==================== */}
       <section id="reflection" className="musea-section" style={{ background: "var(--musea-surface)", paddingBottom: "120px" }}>
