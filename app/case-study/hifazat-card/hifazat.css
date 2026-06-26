@@ -2,7 +2,7 @@
    HIFAZAT CARD — Case Study CSS
    Designer: Kaynat Tahir
    ================================================ */
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
   --hc-primary:       #0D3B38;
@@ -303,3 +303,101 @@
   .hc-container  { padding:0 var(--sp-2); }
   .hc-brief-grid { grid-template-columns:1fr 1fr; }
 }
+
+/* ═══════════════════════════════════════════════
+   HIGH-FIDELITY LANDING PAGE PREVIEW
+   ═══════════════════════════════════════════════ */
+
+/* Browser chrome wrapper */
+.hc-hifi-browser { border: var(--border); box-shadow: var(--shadow-xl); overflow: hidden; background: var(--hc-white); }
+.hc-hifi-bar { background: #E8E4DC; border-bottom: var(--border); padding: 10px 16px; display: flex; align-items: center; gap: 12px; }
+.hc-hifi-dots { display: flex; gap: 6px; }
+.hc-hifi-dots span { width: 10px; height: 10px; border-radius: 50%; border: 1px solid rgba(0,0,0,0.12); }
+.hc-hifi-dots span:nth-child(1) { background: #E2484A; }
+.hc-hifi-dots span:nth-child(2) { background: #EBA020; }
+.hc-hifi-dots span:nth-child(3) { background: #2D9E68; }
+.hc-hifi-url { background: #fff; border: 1px solid #ccc; border-radius: 20px; padding: 3px 16px; font-size: 0.72rem; font-family: var(--hc-body); color: var(--hc-gray); flex: 1; text-align: center; }
+.hc-hifi-content { overflow: hidden; }
+
+/* Navbar */
+.hifi-nav { background: #0D3B38; padding: 12px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.hifi-nav-logo { display: flex; align-items: center; gap: 8px; font-family: var(--hc-display); font-weight: 800; font-size: 0.88rem; color: #fff; }
+.hifi-nav-links { display: flex; gap: 20px; }
+.hifi-nav-links span { font-family: var(--hc-body); font-size: 0.75rem; color: rgba(255,255,255,0.72); cursor: pointer; }
+.hifi-nav-cta { display: flex; gap: 8px; align-items: center; }
+.hifi-btn-nav-ghost { background: transparent; border: 1.5px solid rgba(255,255,255,0.35); color: #fff; font-family: var(--hc-display); font-weight: 600; font-size: 0.72rem; padding: 6px 16px; cursor: pointer; border-radius: 2px; }
+.hifi-btn-nav-primary { background: #EBA020; border: none; color: #0D1F1E; font-family: var(--hc-display); font-weight: 700; font-size: 0.72rem; padding: 6px 16px; cursor: pointer; border-radius: 2px; }
+
+/* Hero */
+.hifi-hero { display: grid; grid-template-columns: 1fr 1fr; background: #F9F9F0; overflow: hidden; min-height: 300px; }
+.hifi-hero-left { padding: 44px 36px 44px 40px; display: flex; flex-direction: column; gap: 14px; justify-content: center; }
+.hifi-eyebrow-tag { font-family: var(--hc-display); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #0D3B38; background: #EBF5F2; padding: 4px 12px; display: inline-block; border-radius: 2px; width: fit-content; }
+.hifi-h1 { font-family: var(--hc-display); font-weight: 800; font-size: clamp(1.25rem, 2.5vw, 2rem); line-height: 1.15; color: #0D1F1E; margin: 0; }
+.hifi-h1 em { font-style: normal; color: #EBA020; }
+.hifi-h2 { font-family: var(--hc-display); font-weight: 800; font-size: clamp(1rem, 1.8vw, 1.55rem); line-height: 1.2; color: #0D1F1E; margin: 0 0 14px; text-align: center; }
+.hifi-body-text { font-family: var(--hc-body); font-size: 0.82rem; color: #4A4A4A; line-height: 1.7; margin: 0; }
+.hifi-hero-btns { display: flex; gap: 10px; margin-top: 4px; }
+.hifi-btn-primary { background: #EBA020; border: none; color: #0D1F1E; font-family: var(--hc-display); font-weight: 700; font-size: 0.72rem; padding: 8px 18px; cursor: pointer; border-radius: 2px; }
+.hifi-btn-ghost { background: transparent; border: 1.5px solid #0D3B38; color: #0D3B38; font-family: var(--hc-display); font-weight: 600; font-size: 0.72rem; padding: 8px 18px; cursor: pointer; border-radius: 2px; }
+.hifi-hero-right { background: #EBA020; overflow: hidden; display: flex; align-items: flex-end; justify-content: center; }
+
+/* Stats bar */
+.hifi-stats { background: #fff; display: grid; grid-template-columns: repeat(4,1fr); border-top: 1px solid #E8E4DC; border-bottom: 1px solid #E8E4DC; }
+.hifi-stat-item { padding: 20px 16px; display: flex; flex-direction: column; gap: 3px; align-items: center; text-align: center; border-right: 1px solid #E8E4DC; }
+.hifi-stat-item:last-child { border-right: none; }
+.hifi-stat-num { font-family: var(--hc-display); font-weight: 800; font-size: 1.5rem; color: #0D3B38; line-height: 1; }
+.hifi-stat-label { font-family: var(--hc-body); font-size: 0.68rem; color: #8A8A8A; }
+
+/* Sections */
+.hifi-section { padding: 44px 40px; background: #F9F9F0; text-align: center; }
+.hifi-section-alt { background: #fff; }
+.hifi-eyebrow-sm { font-family: var(--hc-display); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em; color: #EBA020; margin-bottom: 8px; display: block; }
+
+/* Steps */
+.hifi-steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 24px; text-align: left; }
+.hifi-step-card { background: #fff; border: 1px solid #E8E4DC; padding: 20px 18px; border-radius: 4px; }
+.hifi-step-num { width: 32px; height: 32px; background: #EBA020; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--hc-display); font-weight: 800; font-size: 0.72rem; color: #0D1F1E; margin-bottom: 10px; }
+.hifi-step-title { font-family: var(--hc-display); font-weight: 700; font-size: 0.85rem; color: #0D1F1E; margin: 0 0 6px; }
+.hifi-step-desc { font-family: var(--hc-body); font-size: 0.75rem; color: #4A4A4A; margin: 0; line-height: 1.6; }
+
+/* Features */
+.hifi-features { display: grid; grid-template-columns: repeat(2,1fr); gap: 14px; margin-top: 24px; text-align: left; }
+.hifi-feature-card { background: #F9F9F0; border: 1px solid #E8E4DC; padding: 20px 18px; border-radius: 4px; display: flex; flex-direction: column; gap: 6px; }
+.hifi-feature-icon { font-size: 1.3rem; }
+.hifi-feature-title { font-family: var(--hc-display); font-weight: 700; font-size: 0.85rem; color: #0D1F1E; margin: 0; }
+.hifi-feature-desc { font-family: var(--hc-body); font-size: 0.75rem; color: #4A4A4A; margin: 0; line-height: 1.6; flex: 1; }
+.hifi-feature-link { font-family: var(--hc-display); font-size: 0.68rem; font-weight: 700; color: #0D3B38; text-decoration: none; }
+
+/* Animal section */
+.hifi-animal-section { display: grid; grid-template-columns: 1fr 1fr; background: #fff; min-height: 260px; }
+.hifi-animal-img { overflow: hidden; }
+.hifi-animal-content { padding: 36px 32px; display: flex; flex-direction: column; gap: 10px; justify-content: center; }
+.hifi-check-list { list-style: none; padding: 0; margin: 8px 0 0; display: flex; flex-direction: column; gap: 7px; }
+.hifi-check-list li { display: flex; align-items: center; gap: 8px; font-family: var(--hc-body); font-size: 0.78rem; color: #4A4A4A; }
+.hifi-check { width: 18px; height: 18px; background: #EBF5F2; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #0D3B38; font-size: 0.65rem; font-weight: 800; flex-shrink: 0; }
+
+/* Testimonials */
+.hifi-testimonials { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-top: 24px; text-align: left; }
+.hifi-testimonial-card { background: #fff; border: 1px solid #E8E4DC; padding: 20px 16px; border-radius: 4px; display: flex; flex-direction: column; gap: 10px; }
+.hifi-stars { font-size: 0.75rem; color: #EBA020; letter-spacing: 1px; }
+.hifi-quote { font-family: var(--hc-body); font-size: 0.77rem; color: #4A4A4A; line-height: 1.65; margin: 0; flex: 1; font-style: italic; }
+.hifi-reviewer { display: flex; align-items: center; gap: 8px; }
+.hifi-reviewer-avatar { width: 30px; height: 30px; border-radius: 50%; background: #0D3B38; display: flex; align-items: center; justify-content: center; color: #fff; font-family: var(--hc-display); font-weight: 700; font-size: 0.75rem; flex-shrink: 0; }
+.hifi-reviewer-name { font-family: var(--hc-display); font-weight: 700; font-size: 0.75rem; color: #0D1F1E; margin: 0; }
+.hifi-reviewer-role { font-family: var(--hc-body); font-size: 0.65rem; color: #8A8A8A; margin: 0; }
+
+/* CTA */
+.hifi-cta { background: #0D3B38; padding: 44px 40px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.hifi-cta-eyebrow { font-family: var(--hc-display); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em; color: #EBA020; }
+.hifi-cta-title { font-family: var(--hc-display); font-weight: 800; font-size: clamp(1.2rem, 2.2vw, 1.8rem); color: #fff; margin: 0; }
+.hifi-cta-body { font-family: var(--hc-body); font-size: 0.8rem; color: rgba(255,255,255,0.68); max-width: 480px; line-height: 1.7; margin: 0; }
+.hifi-cta-btns { display: flex; gap: 10px; margin-top: 6px; }
+.hifi-btn-accent { background: #EBA020; border: none; color: #0D1F1E; font-family: var(--hc-display); font-weight: 700; font-size: 0.75rem; padding: 9px 20px; cursor: pointer; border-radius: 2px; }
+.hifi-btn-ghost-light { background: transparent; border: 1.5px solid rgba(255,255,255,0.4); color: #fff; font-family: var(--hc-display); font-weight: 600; font-size: 0.75rem; padding: 9px 20px; cursor: pointer; border-radius: 2px; }
+
+/* Footer */
+.hifi-footer { background: #0D1F1E; padding: 24px 40px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.hifi-footer-logo { display: flex; align-items: center; gap: 8px; font-family: var(--hc-display); font-weight: 800; font-size: 0.85rem; color: #fff; }
+.hifi-footer-links { display: flex; gap: 16px; }
+.hifi-footer-links span { font-family: var(--hc-body); font-size: 0.72rem; color: rgba(255,255,255,0.5); cursor: pointer; }
+.hifi-footer-copy { font-family: var(--hc-body); font-size: 0.68rem; color: rgba(255,255,255,0.35); margin: 0; }

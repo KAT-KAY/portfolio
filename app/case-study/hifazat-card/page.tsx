@@ -34,8 +34,8 @@ export default function HifazatCard() {
           <Shield s={20} c="var(--hc-primary)" /> HIFAZATCARD
         </Link>
         <div className="hc-nav-links">
-          {["problem","solution","design","wireframe"].map(id => (
-            <a key={id} href={`#${id}`} className="hc-nav-link" style={{textTransform:"capitalize"}}>{id}</a>
+          {["problem","solution","design","wireframe","hifi"].map(id => (
+            <a key={id} href={`#${id}`} className="hc-nav-link" style={{textTransform:"capitalize"}}>{id === "hifi" ? "Hi-Fi" : id}</a>
           ))}
           <a href="/#case-studies" className="hc-btn hc-btn-accent" style={{padding:"8px 20px"}}>← Portfolio</a>
         </div>
@@ -129,6 +129,26 @@ export default function HifazatCard() {
                 <p style={{color:col==="#fff"?"rgba(255,255,255,0.75)":"var(--hc-charcoal)",fontSize:"0.82rem",fontFamily:"var(--hc-body)",opacity:0.85}}>{d}</p>
               </div>
             ))}
+          </div>
+
+          {/* Onboarding screens gallery */}
+          <div style={{marginTop:"40px"}}>
+            <p style={{fontFamily:"var(--hc-body)",fontSize:"0.82rem",color:"var(--hc-charcoal)",textTransform:"uppercase",letterSpacing:"0.1em",marginBottom:"20px",opacity:0.7}}>App Onboarding Screens</p>
+            <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:"20px",alignItems:"flex-start"}}>
+              {[
+                {src:"/hifazat/onboard-splash.png",   label:"Splash Screen"},
+                {src:"/hifazat/onboard-id.png",       label:"Never Lose Your Pet"},
+                {src:"/hifazat/onboard-qr.png",       label:"Identify with QR"},
+                {src:"/hifazat/onboard-health.png",   label:"Organise Health Records"},
+              ].map(({src,label})=>(
+                <div key={label} style={{display:"flex",flexDirection:"column",alignItems:"center",gap:"12px"}}>
+                  <div style={{borderRadius:"24px",overflow:"hidden",boxShadow:"0 8px 32px rgba(0,0,0,0.14)",border:"3px solid var(--hc-white)",background:"#fff",width:"100%"}}>
+                    <Image src={src} alt={label} width={300} height={620} style={{width:"100%",height:"auto",display:"block"}} />
+                  </div>
+                  <span style={{fontFamily:"var(--hc-body)",fontSize:"0.78rem",color:"var(--hc-charcoal)",textAlign:"center",opacity:0.8}}>{label}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -228,13 +248,33 @@ export default function HifazatCard() {
           <div className="hc-comp-grid">
             <div className="hc-comp-frame">
               <span className="hc-comp-label">Typography Scale</span>
-              <div style={{padding:"24px",display:"flex",flexDirection:"column",gap:"8px"}}>
-                <p style={{fontFamily:"var(--hc-display)",fontWeight:800,fontSize:"1.6rem",lineHeight:1.1,color:"var(--hc-black)",margin:0}}>Welcome to HifazatCard</p>
-                <p style={{fontFamily:"var(--hc-display)",fontWeight:700,fontSize:"1.1rem",color:"var(--hc-black)",margin:0}}>Register your animal today</p>
-                <p style={{fontFamily:"var(--hc-display)",fontWeight:600,fontSize:"0.95rem",color:"var(--hc-black)",margin:0}}>Every animal deserves an identity</p>
-                <p style={{fontFamily:"var(--hc-body)",fontSize:"0.88rem",color:"var(--hc-charcoal)",margin:0}}>Body text reads like this across the website. Comfortable and clear.</p>
-                <p style={{fontFamily:"var(--hc-body)",fontSize:"0.75rem",color:"var(--hc-gray)",margin:0}}>Helper text, captions and small labels</p>
-                <span style={{fontFamily:"var(--hc-display)",fontWeight:700,fontSize:"0.6rem",letterSpacing:"0.18em",textTransform:"uppercase",color:"var(--hc-black)"}}>BADGE · TAG · NAV ITEM</span>
+              <div style={{padding:"24px",display:"flex",flexDirection:"column",gap:"0"}}>
+
+                {/* ── Poppins block ── */}
+                <div style={{marginBottom:"20px"}}>
+                  <div style={{display:"flex",alignItems:"baseline",gap:"10px",marginBottom:"12px"}}>
+                    <span style={{fontFamily:"'Poppins', var(--hc-display)",fontWeight:800,fontSize:"1.55rem",lineHeight:1,color:"var(--hc-black)",letterSpacing:"-0.02em"}}>Poppins</span>
+                    <span style={{fontFamily:"var(--hc-body)",fontSize:"0.68rem",fontWeight:500,color:"var(--hc-gray)",letterSpacing:"0.12em",textTransform:"uppercase",paddingBottom:"2px"}}>Display &amp; Headings</span>
+                  </div>
+                  <p style={{fontFamily:"'Poppins', var(--hc-display)",fontWeight:800,fontSize:"1.3rem",lineHeight:1.15,color:"var(--hc-black)",margin:"0 0 5px"}}>Welcome to HifazatCard</p>
+                  <p style={{fontFamily:"'Poppins', var(--hc-display)",fontWeight:700,fontSize:"1rem",color:"var(--hc-black)",margin:"0 0 5px"}}>Register your animal today</p>
+                  <p style={{fontFamily:"'Poppins', var(--hc-display)",fontWeight:600,fontSize:"0.88rem",color:"var(--hc-black)",margin:"0 0 5px"}}>Every animal deserves an identity</p>
+                  <span style={{fontFamily:"'Poppins', var(--hc-display)",fontWeight:700,fontSize:"0.6rem",letterSpacing:"0.18em",textTransform:"uppercase",color:"var(--hc-accent)"}}>BADGE · TAG · NAV ITEM</span>
+                </div>
+
+                {/* ── divider ── */}
+                <div style={{height:"1.5px",background:"var(--hc-border-col)",marginBottom:"20px"}} />
+
+                {/* ── Inter block ── */}
+                <div>
+                  <div style={{display:"flex",alignItems:"baseline",gap:"10px",marginBottom:"12px"}}>
+                    <span style={{fontFamily:"'Inter', var(--hc-body)",fontWeight:700,fontSize:"1.55rem",lineHeight:1,color:"var(--hc-black)",letterSpacing:"-0.01em"}}>Inter</span>
+                    <span style={{fontFamily:"var(--hc-body)",fontSize:"0.68rem",fontWeight:500,color:"var(--hc-gray)",letterSpacing:"0.12em",textTransform:"uppercase",paddingBottom:"2px"}}>Body &amp; UI Text</span>
+                  </div>
+                  <p style={{fontFamily:"'Inter', var(--hc-body)",fontSize:"0.88rem",color:"var(--hc-charcoal)",margin:"0 0 5px",lineHeight:1.7}}>Body text reads like this across the website. Comfortable, clear, and highly legible at all sizes.</p>
+                  <p style={{fontFamily:"'Inter', var(--hc-body)",fontSize:"0.75rem",color:"var(--hc-gray)",margin:0,lineHeight:1.6}}>Helper text, captions, small labels and descriptions</p>
+                </div>
+
               </div>
             </div>
             <div className="hc-comp-frame">
@@ -339,6 +379,171 @@ export default function HifazatCard() {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ═══ HIGH-FIDELITY DESIGN ═══ */}
+      <section id="hifi" className="hc-section-sm">
+        <div className="hc-container">
+          <div className="hc-section-header">
+            <div className="hc-counter">08 — HIGH-FIDELITY DESIGN</div>
+            <h2 className="hc-h2">The landing page, brought to life.</h2>
+          </div>
+          <p className="hc-body" style={{maxWidth:"600px",marginBottom:"40px"}}>
+            With research validated and the design system in place, I built the full landing page — covering every key user touchpoint from first impression to conversion.
+          </p>
+
+          {/* Browser chrome wrapper */}
+          <div className="hc-hifi-browser">
+            <div className="hc-hifi-bar">
+              <div className="hc-hifi-dots"><span/><span/><span/></div>
+              <div className="hc-hifi-url">hifazatcard.com</div>
+            </div>
+            <div className="hc-hifi-content">
+
+              {/* ── Navbar ── */}
+              <div className="hifi-nav">
+                <div className="hifi-nav-logo"><Shield s={14} c="#EBA020" />HifazatCard</div>
+                <div className="hifi-nav-links">
+                  {["Home","Plans","Pets","Find","Health Record"].map(l => <span key={l}>{l}</span>)}
+                </div>
+                <div className="hifi-nav-cta">
+                  <button className="hifi-btn-nav-ghost">Login</button>
+                  <button className="hifi-btn-nav-primary">Try For Free →</button>
+                </div>
+              </div>
+
+              {/* ── Hero ── */}
+              <div className="hifi-hero">
+                <div className="hifi-hero-left">
+                  <span className="hifi-eyebrow-tag">🐾 Pakistan&apos;s #1 Pet Identity Platform</span>
+                  <h1 className="hifi-h1">Give Your Animal an <em>Identity</em> They Deserve</h1>
+                  <p className="hifi-body-text">Register your pet with a scannable QR card — verified by vets, recognized across Pakistan. No app needed.</p>
+                  <div className="hifi-hero-btns">
+                    <button className="hifi-btn-primary">Subscribe</button>
+                    <button className="hifi-btn-ghost">Learn More</button>
+                  </div>
+                </div>
+                <div className="hifi-hero-right">
+                  <Image src="/hifazat/hero-pets.png" alt="Pets" width={420} height={340} style={{width:"100%",height:"100%",objectFit:"cover",objectPosition:"center top"}} />
+                </div>
+              </div>
+
+              {/* ── Stats bar ── */}
+              <div className="hifi-stats">
+                {[["12,500+","Animals Registered"],["25+","Care Clinics"],["150+","Providers"],["99%","Rating"]].map(([n,l]) => (
+                  <div key={l} className="hifi-stat-item">
+                    <span className="hifi-stat-num">{n}</span>
+                    <span className="hifi-stat-label">{l}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* ── How It Works ── */}
+              <div className="hifi-section">
+                <span className="hifi-eyebrow-sm">HOW IT WORKS</span>
+                <h2 className="hifi-h2">Get Your Animal&apos;s Card in 3 Simple Steps</h2>
+                <div className="hifi-steps">
+                  {[
+                    ["01","Register Online","Fill in your animal's details through our simple online form — takes under 2 minutes."],
+                    ["02","Digital Profile","Your animal gets a unique digital profile with all health records and owner details."],
+                    ["03","Physical Card","Receive your physical QR card — scan anywhere, anytime. No app required."],
+                  ].map(([n,t,d]) => (
+                    <div key={n} className="hifi-step-card">
+                      <div className="hifi-step-num">{n}</div>
+                      <p className="hifi-step-title">{t}</p>
+                      <p className="hifi-step-desc">{d}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* ── Features ── */}
+              <div className="hifi-section hifi-section-alt">
+                <span className="hifi-eyebrow-sm">WHY CHOOSE US</span>
+                <h2 className="hifi-h2">Everything Your Animal Needs in One Place</h2>
+                <div className="hifi-features">
+                  {[
+                    ["🪪","QR Identity Card","Scannable by any phone — no app needed. Any stranger identifies your pet in seconds."],
+                    ["💉","Vaccination Records","Chronological records updated by owner or verified vet. Never miss a shot again."],
+                    ["💬","WhatsApp Reminders","Smart alerts fire 14 days before each due date — in the channel people already open."],
+                    ["🏥","Clinic Dashboard","Vets manage all registered patients digitally. No paper, no manual tracking."],
+                  ].map(([icon,t,d]) => (
+                    <div key={t} className="hifi-feature-card">
+                      <span className="hifi-feature-icon">{icon}</span>
+                      <p className="hifi-feature-title">{t}</p>
+                      <p className="hifi-feature-desc">{d}</p>
+                      <span className="hifi-feature-link">Learn more →</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* ── Animal section ── */}
+              <div className="hifi-animal-section">
+                <div className="hifi-animal-img">
+                  <Image src="/hifazat/golden-puppy.jpg" alt="Dog" width={540} height={320} style={{width:"100%",height:"100%",objectFit:"cover"}} />
+                </div>
+                <div className="hifi-animal-content">
+                  <span className="hifi-eyebrow-tag">OUR MISSION</span>
+                  <h2 className="hifi-h2" style={{textAlign:"left"}}>Every Animal in Pakistan Deserves to Be Found</h2>
+                  <p className="hifi-body-text">Pakistan has 10M+ pet owners and zero digital tools built for them. We&apos;re changing that — one card at a time.</p>
+                  <ul className="hifi-check-list">
+                    {["Protect your pet&apos;s identity","Track health & vaccination records","Connect with verified vets nearby"].map((c,i) => (
+                      <li key={i}><span className="hifi-check">✓</span><span dangerouslySetInnerHTML={{__html:c}} /></li>
+                    ))}
+                  </ul>
+                  <button className="hifi-btn-primary" style={{marginTop:"8px",width:"fit-content"}}>Register Now →</button>
+                </div>
+              </div>
+
+              {/* ── Testimonials ── */}
+              <div className="hifi-section">
+                <span className="hifi-eyebrow-sm">TESTIMONIALS</span>
+                <h2 className="hifi-h2">What People Are Saying</h2>
+                <div className="hifi-testimonials">
+                  {[
+                    ["★★★★★","\"Finally a service that actually cares about pets in Pakistan. Registered my 3 dogs in minutes.\"","Ayesha K.","Pet Owner"],
+                    ["★★★★★","\"The QR card is brilliant. My vet scanned it instantly and had all records ready to go.\"","Dr. Ahmed","Veterinarian"],
+                    ["★★★★★","\"WhatsApp reminders saved us — we almost missed the rabies booster. Love this platform.\"","Fatima R.","Cat Mom"],
+                  ].map(([stars,quote,name,role]) => (
+                    <div key={name} className="hifi-testimonial-card">
+                      <div className="hifi-stars">{stars}</div>
+                      <p className="hifi-quote">{quote}</p>
+                      <div className="hifi-reviewer">
+                        <div className="hifi-reviewer-avatar">{name[0]}</div>
+                        <div>
+                          <p className="hifi-reviewer-name">{name}</p>
+                          <p className="hifi-reviewer-role">{role}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* ── CTA ── */}
+              <div className="hifi-cta">
+                <span className="hifi-cta-eyebrow">GET STARTED TODAY</span>
+                <h2 className="hifi-cta-title">Register Your Animal Today</h2>
+                <p className="hifi-cta-body">Join thousands of pet owners across Pakistan who&apos;ve already given their animals an identity they deserve.</p>
+                <div className="hifi-cta-btns">
+                  <button className="hifi-btn-accent">Register Animal →</button>
+                  <button className="hifi-btn-ghost-light">Learn More</button>
+                </div>
+              </div>
+
+              {/* ── Footer ── */}
+              <div className="hifi-footer">
+                <div className="hifi-footer-logo"><Shield s={14} c="#EBA020" />HifazatCard</div>
+                <div className="hifi-footer-links">
+                  {["Home","Plans","Find a Vet","Health Record","Contact"].map(l => <span key={l}>{l}</span>)}
+                </div>
+                <p className="hifi-footer-copy">© 2025 HifazatCard. All rights reserved.</p>
+              </div>
+
+            </div>{/* end hifi-content */}
+          </div>{/* end hifi-browser */}
         </div>
       </section>
 
